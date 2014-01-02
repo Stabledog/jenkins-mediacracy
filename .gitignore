@@ -1,0 +1,26 @@
+.owner
+Connection Activity monitoring to slaves.log
+Fingerprint cleanup.log
+hudson.maven.MavenModuleSet.xml
+hudson.model.UpdateCenter.xml
+hudson.scm.CVSSCM.xml
+hudson.scm.SubversionSCM.xml
+hudson.tasks.Ant.xml
+hudson.tasks.Mailer.xml
+hudson.tasks.Maven.xml
+hudson.tasks.Shell.xml
+hudson.triggers.SCMTrigger.xml
+identity.key
+jenkins.model.JenkinsLocationConfiguration.xml
+jenkins.mvn.GlobalMavenConfig.xml
+jenkins.security.RekeySecretAdminMonitor
+nodeMonitors.xml
+plugins
+queue.xml.bak
+secret.key
+secrets
+updates
+userContent
+users
+workspace
+Workspace clean-up.log
