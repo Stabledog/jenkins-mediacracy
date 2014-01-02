@@ -30,6 +30,8 @@ git add .
 )
 git commit -m &quot;Synced by github_sync_jenkins job&quot;
 
+git push
+
 exit 0</command>
     </hudson.tasks.Shell>
   </builders>
