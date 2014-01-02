@@ -29,6 +29,7 @@ git add .
    git add -f $(find -name config.xml)
 )
 
+set +e
 git commit -m &quot;Synced by github_sync_jenkins job&quot; &gt;/tmp/github-sync.txt
 if [[ $? -ne 0 ]]; then
    txt=$(cat /tmp/github-sync.txt)
@@ -39,6 +40,7 @@ if [[ $? -ne 0 ]]; then
    echo &quot;$txt&quot;
    exit 1
 fi
+set -e
 
 git push 
 
