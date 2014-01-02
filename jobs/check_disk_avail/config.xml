@@ -9,14 +9,31 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>0 4 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>df -h
+      <command>list=$(df -h | grep &apos;^/dev/sd&apos; | awk &apos;{print $5}&apos; | tr -d &apos;%&apos;)
+echo &quot;$list&quot;
+while read line; do
+    if (( $line &gt;= 90 )); then
+        echo &quot;One or more partitions is &gt;= 90% full&quot;
+        exit 1
+    fi
+done &lt;&lt;&lt; &quot;$list&quot;
 </command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers/>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.4">
+      <recipients>les.matheson@gmail.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
   <buildWrappers/>
 </project>
