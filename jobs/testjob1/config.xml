@@ -9,12 +9,15 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers class="vector"/>
+  <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
       <command>echo &quot;Hello from $(hostname):$(whoami)&quot;
-</command>
+echo &quot;path=$PATH&quot;
+
+cd /mnt/sdb3/myBackup/anchor2
+file-age-seconds latest</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>

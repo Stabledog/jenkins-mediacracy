@@ -24,3 +24,5 @@ userContent
 users
 workspace
 Workspace clean-up.log
+.bash_history
+.viminfo
