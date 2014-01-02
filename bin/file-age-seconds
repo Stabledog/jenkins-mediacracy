@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Print the file age in seconds:  
+
+function fileAgeSeconds {
+	local filename=$1
+	modsecs=$(date --utc --reference=$filename +%s)
+	nowsecs=$(date +%s)
+	delta=$(($nowsecs-$modsecs))
+	echo  $delta
+}
+
+if [[ -z $sourceMe ]]; then
+	fileAgeSeconds $1
+fi
