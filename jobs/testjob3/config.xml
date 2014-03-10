@@ -17,23 +17,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo &quot;Hello from $(hostname):$(whoami)&quot;
-echo &quot;path=$PATH&quot;
-
-cd /mnt/sdb3/myBackup/anchor2
-file-age-seconds latest</command>
+      <command>echo &quot;Hello from testjob2&quot;</command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>testjob2</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
-  </publishers>
+  <publishers/>
   <buildWrappers/>
 </project>
