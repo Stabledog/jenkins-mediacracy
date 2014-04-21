@@ -26,3 +26,5 @@ workspace
 Workspace clean-up.log
 .bash_history
 .viminfo
+queue.xml
+D
