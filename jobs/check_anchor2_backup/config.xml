@@ -21,7 +21,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd /mnt/sdb3/myBackup/anchor2
+      <command>cd /mnt/sdc3/myBackup/anchor2
 
 # The &apos;latest&apos; file is updated by the backup script (which runs as a cygwin cron job)
 age=$(file-age-seconds ./latest)
